@@ -29,13 +29,13 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/loginID"
+            android:id="@+id/login_ID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="ID 입력" />
 
         <EditText
-            android:id="@+id/loginPWD"
+            android:id="@+id/login_PWD"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="PWD 입력" />
@@ -64,7 +64,7 @@
             android:textColor="#ffffff"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:id="@+id/btnJoinActivity"/>
+            android:id="@+id/btnJoin_Activity"/>
 
     </LinearLayout>
 

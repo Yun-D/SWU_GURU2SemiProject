@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MemoPadActivity">
+
+    <!-- Tab 구현 밑에 들어갈 xml만? 하면 투두 ㄴ(메모 작성, 메모 상세보기 Tab 구현 해야 함. TODO-->
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#64ADE2"
+        android:text="새 메모 작성"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:id="@+id/btnAddMeMo_Activity"/>
+
+    <!-- ListView 구현 TODO-->
+    <view class="androidx.appcompat.app.AlertController$RecycleListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </view>
+</LinearLayout>

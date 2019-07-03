@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MemberInfo">
+
+    <ImageView
+        android:id="@+id/memberInfo_imgView"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/img1" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+            <TextView android:text="ID : "
+                android:textSize="25dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/memberInfo_userID"
+                android:textSize="25dp"
+                android:text="test1" />
+        </TableRow>
+
+        <TableRow>
+            <TextView android:text="이름 : "
+                android:textSize="25dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/memberInfo_userName"
+                android:textSize="25dp"
+                android:text="test2" />
+        </TableRow>
+
+        <TableRow>
+            <TextView android:text="비밀번호 :  "
+                android:textSize="25dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/memberInfo_userPWD"
+                android:textSize="25dp"
+                android:text="test3" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

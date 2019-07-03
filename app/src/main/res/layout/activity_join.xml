@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="40dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".JoinActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회원가입"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="50dp"/>
+
+    <!-- Camera -->
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:src="@drawable/img1"
+        android:layout_marginBottom="30dp"
+        android:id="@+id/join_ImgView" />
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:background="#64ADE2"
+        android:text="사진찍기"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:id="@+id/join_Camera"/>
+
+    <!-- EditText -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/join_ID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID 입력" />
+
+        <EditText
+            android:id="@+id/join_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="이름 입력" />
+
+        <EditText
+            android:id="@+id/join_PWD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="PWD 입력" />
+
+        <EditText
+            android:id="@+id/join_PWDConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="PWD 확인" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="#64ADE2"
+        android:text="회원가입"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:id="@+id/btnJoin"/>
+</LinearLayout>

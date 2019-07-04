@@ -7,8 +7,9 @@ public class MemberModel implements Serializable { //회원 정보를 담을 그
     public String toString() {
         return "Member{" +
                 "id='" + id + '\'' +
-                ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", passwordConfirm='" + password2 + '\'' +
                 '}';
     } //toString을 통해 들어있는 값 볼 수 있음
 
@@ -20,14 +21,6 @@ public class MemberModel implements Serializable { //회원 정보를 담을 그
         this.id = id;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getName() {
         return name;
     }
@@ -37,7 +30,24 @@ public class MemberModel implements Serializable { //회원 정보를 담을 그
     }
 
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPassword2() {
+        return password2;
+    }
+
+    public void setPassword2(String password2) {
+        this.password2 = password2;
+    }
+
     private String id;
-    private String password;
     private String name;
+    private String password;
+    private String password2; //PWDConfirm
 }

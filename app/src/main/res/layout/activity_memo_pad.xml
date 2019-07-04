@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context=".MemoPadActivity">
 
-    <!-- Tab 구현 밑에 들어갈 xml만? 하면 투두 ㄴ(메모 작성, 메모 상세보기 Tab 구현 해야 함. TODO-->
+    <!-- 메모 작성, 메모 상세보기 Tab 구현 해야 함. TODO-->
 
     <Button
         android:layout_width="match_parent"
@@ -20,10 +20,11 @@
         android:textStyle="bold"
         android:id="@+id/btnAddMeMo_Activity"/>
 
-    <!-- ListView 구현 TODO-->
-    <view class="androidx.appcompat.app.AlertController$RecycleListView"
+    <ListView
+        android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
 
-    </view>
+    </ListView>
 </LinearLayout>

@@ -25,11 +25,11 @@ public class MemoPadFragment extends Fragment {
         btnAddMeMo_Activity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(this, WritingFragment.class);
-                //startActivity(intent);
+                Intent intent = new Intent(getContext(), WritingFragment.class);
+                startActivity(intent);
             }
         });
 
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return view;
     }
 }

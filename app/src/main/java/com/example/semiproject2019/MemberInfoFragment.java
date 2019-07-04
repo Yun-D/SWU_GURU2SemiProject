@@ -18,6 +18,6 @@ public class MemberInfoFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_member_info, container, false);
 
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return view;
     }
 }

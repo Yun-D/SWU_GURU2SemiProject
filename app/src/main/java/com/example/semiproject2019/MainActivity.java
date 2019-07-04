@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,12 +32,20 @@ public class MainActivity extends AppCompatActivity {
 전체적으로 - 메모탭 / 회원정보 탭 임
 
          */
+        Button btnLogin = findViewById(R.id.btnLogin); //로그인 버튼
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "로그인...", Toast.LENGTH_SHORT).show();
+            }
+        });
 
-        Button btnJoin_Activity = findViewById(R.id.btnJoin_Activity);
+        Button btnJoin_Activity = findViewById(R.id.btnJoin_Activity); //회원가입 버튼
         btnJoin_Activity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), JoinActivity.class);
+                startActivity(intent);
             }
         });
 

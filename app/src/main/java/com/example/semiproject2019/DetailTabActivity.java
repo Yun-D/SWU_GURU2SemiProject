@@ -10,7 +10,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailTabActivity extends AppCompatActivity {
 
     private TabLayout detailTabLayout; //탭영역
     private ViewPager detailViewPager; //탭별 표시할 영역
@@ -18,7 +18,7 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+        setContentView(R.layout.activity_detail_tab);
 
         detailTabLayout = findViewById(R.id.detailTabLayout);
         detailViewPager = findViewById(R.id.detailViewPager);

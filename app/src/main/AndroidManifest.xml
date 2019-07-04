@@ -30,7 +30,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailActivity" />
+        <activity android:name=".DetailTabActivity" />
         <activity android:name=".MemoTabActivity" />
         <activity android:name=".TabActivity" />
         <activity android:name=".JoinActivity" />

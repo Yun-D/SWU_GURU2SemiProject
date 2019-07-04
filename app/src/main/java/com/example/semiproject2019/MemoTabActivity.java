@@ -7,6 +7,9 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -14,6 +17,7 @@ public class MemoTabActivity extends AppCompatActivity {
 
     private TabLayout memoTabLayout; //탭영역
     private ViewPager memoViewPager; //탭별 표시할 영역
+    Button btnSave; //메모 저장 버튼
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,8 @@ public class MemoTabActivity extends AppCompatActivity {
 
         memoTabLayout = findViewById(R.id.memoTabLayout);
         memoViewPager = findViewById(R.id.memoViewPager);
+
+        btnSave = findViewById(R.id.btnSave);
 
         //Tab 생성
         memoTabLayout.addTab(memoTabLayout.newTab().setText("글쓰기"));
@@ -48,6 +54,17 @@ public class MemoTabActivity extends AppCompatActivity {
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
 
+            }
+        });
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //DB 저장하기 TODO
+
+                // if 처리하기
+                Toast.makeText(getApplicationContext(), "메모가 저장 되었습니다.", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
     }

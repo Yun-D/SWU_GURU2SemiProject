@@ -24,7 +24,7 @@
                 android:id="@+id/memoItem_imgView"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/img1" />
+                android:src="@drawable/userimg" />
         </LinearLayout>
 
         <LinearLayout
@@ -87,13 +87,15 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="29dp"
                     android:gravity="right">
 
                     <TextView
                         android:id="@+id/memoItem_txtDate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginRight="10dp"
                         android:text="2019.07.04" />
                 </LinearLayout>
             </LinearLayout>

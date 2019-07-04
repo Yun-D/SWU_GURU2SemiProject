@@ -25,7 +25,7 @@ public class MemoPadFragment extends Fragment {
         btnAddMeMo_Activity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), WritingFragment.class);
+                Intent intent = new Intent(getContext(), MemoTabActivity.class);
                 startActivity(intent);
             }
         });

@@ -13,7 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MemoTabActivity"></activity>
+        <activity android:name=".LocationFragment"></activity>
+        <activity android:name=".CameraFragment" />
+        <activity android:name=".WritingFragment" />
+        <activity android:name=".DetailActivity" />
+        <activity android:name=".MemoTabActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -25,8 +29,8 @@
         </provider>
 
         <activity android:name=".TabActivity" />
-        <activity android:name=".MemberInfo" />
-        <activity android:name=".MemoPadActivity" />
+        <activity android:name=".MemberInfoFragment" />
+        <activity android:name=".MemoPadFragment" />
         <activity android:name=".JoinActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -6,9 +6,7 @@
     android:layout_margin="20dp"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MemoPadActivity">
-
-    <!-- 메모 작성, 메모 상세보기 Tab 구현 해야 함. TODO-->
+    tools:context=".MemoPadFragment">
 
     <Button
         android:layout_width="match_parent"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MemoTabActivity"
+    tools:context=".DetailActivity"
     android:orientation="vertical"
     android:gravity="center">
 
@@ -13,21 +13,21 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
         android:gravity="center"
-        android:text="메모 작성"
+        android:text="메모 상세보기"
         android:textSize="35dp"
         android:textStyle="bold" />
 
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/memoTabLayout">
+        android:id="@+id/detailTabLayout">
 
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/memoViewPager">
+        android:id="@+id/detailViewPager">
 
     </androidx.viewpager.widget.ViewPager>
 

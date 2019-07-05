@@ -1,4 +1,4 @@
-package com.example.semiproject2019;
+package com.example.semiproject2019.activity;
 
 import android.os.Bundle;
 
@@ -8,6 +8,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.semiproject2019.fragment.MemberInfoFragment;
+import com.example.semiproject2019.fragment.MemoPadFragment;
+import com.example.semiproject2019.R;
 import com.google.android.material.tabs.TabLayout;
 
 public class DetailTabActivity extends AppCompatActivity {

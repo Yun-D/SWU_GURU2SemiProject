@@ -1,4 +1,4 @@
-package com.example.semiproject2019;
+package com.example.semiproject2019.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.semiproject2019.R;
 import com.example.semiproject2019.database.Database;
 import com.example.semiproject2019.model.MemberModel;
 

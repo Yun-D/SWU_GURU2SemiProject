@@ -1,4 +1,4 @@
-package com.example.semiproject2019;
+package com.example.semiproject2019.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -11,6 +11,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.semiproject2019.fragment.CameraFragment;
+import com.example.semiproject2019.fragment.LocationFragment;
+import com.example.semiproject2019.R;
+import com.example.semiproject2019.fragment.WriteFragment;
 import com.google.android.material.tabs.TabLayout;
 
 public class MemoTabActivity extends AppCompatActivity {
@@ -82,7 +86,7 @@ public class MemoTabActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new WritingFragment();
+                    return new WriteFragment();
                 case 1:
                     return new CameraFragment();
                 case 2:

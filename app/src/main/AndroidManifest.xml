@@ -23,17 +23,17 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailTabActivity" />
-        <activity android:name=".MemoTabActivity" />
-        <activity android:name=".TabActivity" />
-        <activity android:name=".JoinActivity" />
+        <activity android:name=".activity.DetailTabActivity" />
+        <activity android:name=".activity.MemoTabActivity" />
+        <activity android:name=".activity.TabActivity" />
+        <activity android:name=".activity.JoinActivity" />
 
     </application>
 

@@ -1,4 +1,4 @@
-package com.example.semiproject2019;
+package com.example.semiproject2019.fragment;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,6 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.example.semiproject2019.R;
+import com.example.semiproject2019.activity.MemoTabActivity;
 
 public class MemoPadFragment extends Fragment {
     public MemoPadFragment() {}

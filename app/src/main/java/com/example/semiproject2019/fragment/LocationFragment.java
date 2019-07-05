@@ -1,4 +1,4 @@
-package com.example.semiproject2019;
+package com.example.semiproject2019.fragment;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,13 +10,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class MemberInfoFragment extends Fragment {
-    //회원 정보
+import com.example.semiproject2019.R;
+
+public class LocationFragment extends Fragment {
+    //위치
+
+    LocationFragment(){}
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_member_info, container, false);
+        View view = inflater.inflate(R.layout.fragment_location, container, false);
 
         return view;
     }

@@ -1,4 +1,4 @@
-package com.example.semiproject2019;
+package com.example.semiproject2019.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -8,6 +8,9 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
+import com.example.semiproject2019.fragment.MemberInfoFragment;
+import com.example.semiproject2019.fragment.MemoPadFragment;
+import com.example.semiproject2019.R;
 import com.google.android.material.tabs.TabLayout;
 
 public class TabActivity extends AppCompatActivity {

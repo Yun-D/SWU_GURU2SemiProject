@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MemberInfoFragment">
+    tools:context=".fragment.MemberInfoFragment">
 
     <ImageView
         android:id="@+id/memberInfo_imgView"

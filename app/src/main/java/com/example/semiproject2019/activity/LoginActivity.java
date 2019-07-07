@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
     private View.OnClickListener mBtnJoinClick = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(LoginActivity.this, CameraCapture2Activity.class);
+            Intent intent = new Intent(LoginActivity.this, JoinActivity.class);
             startActivity(intent);
         }
     };

@@ -43,10 +43,6 @@ public class LoginActivity extends AppCompatActivity {
                 else {
                     Log.d(TAG, "회원정보 없음.");
                 }
-//
-//              Intent intent = new Intent(getApplicationContext(), TabActivity.class);
-//              startActivity(intent);
-//                }
 
             }
         });

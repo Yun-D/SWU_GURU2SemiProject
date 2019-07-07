@@ -35,7 +35,7 @@
             android:textColor="#ffffff"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:id="@+id/join_Camera"/>
+            android:id="@+id/btnJoin_Camera"/>
 
         <!-- EditText -->
         <LinearLayout

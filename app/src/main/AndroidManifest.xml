@@ -31,8 +31,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.DetailTabActivity" />
-        <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.TabActivity" />
+        <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.JoinActivity" />
 
     </application>

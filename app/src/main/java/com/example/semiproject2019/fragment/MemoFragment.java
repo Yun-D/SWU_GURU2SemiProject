@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.semiproject2019.R;
-import com.example.semiproject2019.activity.MainActivity;
+import com.example.semiproject2019.activity.TabActivity;
 
 public class MemoFragment extends Fragment {
     public MemoFragment() {}
@@ -28,7 +28,7 @@ public class MemoFragment extends Fragment {
         btnAddMeMo_Activity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), MainActivity.class);
+                Intent intent = new Intent(getContext(), TabActivity.class);
                 startActivity(intent);
             }
         });

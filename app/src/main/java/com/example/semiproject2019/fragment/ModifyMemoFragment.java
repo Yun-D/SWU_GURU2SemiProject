@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 
 import com.example.semiproject2019.R;
 
-public class LocationFragment extends Fragment {
+public class ModifyMemoFragment extends Fragment {
     //위치
 
-    LocationFragment(){}
+    ModifyMemoFragment(){}
 
     @Nullable
     @Override

@@ -36,10 +36,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class JoinActivity extends AppCompatActivity {
-    private final String TAG = this.getClass().getSimpleName(); //클래스명 획득
+    //private final String TAG = this.getClass().getSimpleName(); //클래스명 획득
 
     private ImageView mImgProfile;
-    //사진이 저장도니 경로 - onActivityResult()로부터 받는 데이터
+    //사진이 저장되는 경로 - onActivityResult()로부터 받는 데이터
     private Uri mCaptureUri;
     //사진이 저장된 단말기상의 실제 경로
     public String mPhotoPath;
@@ -167,10 +167,10 @@ public class JoinActivity extends AppCompatActivity {
         Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
-            mCaptureUri = Uri.fromFile( getOutPutMediaFile() );
+            mCaptureUri = Uri.fromFile(getOutPutMediaFile());
         } else {
             mCaptureUri = FileProvider.getUriForFile(this,
-                    "com.example.semiprojectsample", getOutPutMediaFile());
+                    "com.example.semiproject2019", getOutPutMediaFile());
         }
 
         i.putExtra(MediaStore.EXTRA_OUTPUT, mCaptureUri);

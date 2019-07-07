@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         //ViewPager와 tab 연결
         viewPager.setAdapter(adapter); //아답터 등록으로 세개의 뷰페이저를 자동으로 등록시켜줌
+
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout)); //탭을 눌렀을 때 페이지가 같이 바뀌도록 리스너를 달아줌
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

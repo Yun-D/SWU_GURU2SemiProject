@@ -9,7 +9,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 
 import com.example.semiproject2019.fragment.MemberInfoFragment;
-import com.example.semiproject2019.fragment.MemoPadFragment;
+import com.example.semiproject2019.fragment.MemoFragment;
 import com.example.semiproject2019.R;
 import com.google.android.material.tabs.TabLayout;
 
@@ -66,7 +66,7 @@ public class TabActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new MemoPadFragment();
+                    return new MemoFragment();
                 case 1:
                     return new MemberInfoFragment();
             }

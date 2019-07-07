@@ -23,7 +23,7 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,7 +31,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.DetailTabActivity" />
-        <activity android:name=".activity.MemoTabActivity" />
+        <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.TabActivity" />
         <activity android:name=".activity.JoinActivity" />
 

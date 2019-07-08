@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.text.TextUtils;
 
 import com.example.semiproject2019.bean.MemberBean;
+import com.example.semiproject2019.bean.MemoBean;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -14,6 +15,9 @@ import java.util.List;
 public class FileDB {
     private static final String FILE_DB = "FileDB";
     private static Gson mGson = new Gson();
+
+    //메모 리스트 원본 데이터
+    private static List<MemoBean> memos = null;
 
     private static SharedPreferences getSP(Context context){
         SharedPreferences sp = context.getSharedPreferences(FILE_DB, Context.MODE_PRIVATE);
@@ -37,6 +41,73 @@ public class FileDB {
         editor.commit();
     }
 
+    //기존 멤버 교체
+    public static void setMember (Context context, MemberBean memberBean) {
+        //전체 멤버 리스트를 취득
+        List<MemberBean> memberList = getMemberList(context);
+        if (memberList.size() == 0) return;
+
+        //있을경우 for문
+        for(int i = 0; i < memberList.size(); i++) {
+            MemberBean bean = memberList.get(i);
+            if (TextUtils.equals(bean.memID, memberBean.memID)) {
+                //같은 멤버 ID를 찾았다.
+                memberList.set(i, memberBean);
+                break;
+            }
+        }
+
+        //새롭게 업데이트된 리스트를 저장한다.
+        String jsonStr = mGson.toJson(memberList);
+
+        //멤버리스트 저장
+        SharedPreferences.Editor editor = getSP(context).edit();
+        editor.putString("memberList", jsonStr);
+        editor.commit();
+    }
+
+    //새로운 메모 추가
+    public static void addMemo (Context context, String memID, MemoBean memoBean) {
+        MemberBean findMember = getFindMember(context, memID);
+        if (findMember == null) return;
+
+        List<MemoBean> memoList = findMember.memoList;
+        if(memoList == null) {
+            memoList = new ArrayList<>();
+        }
+        //고유 메모 ID를 생성해준다.
+        memoBean.memoID = memoList.size() + 1;
+        memoList.add(memoBean);
+        findMember.memoList = memoList;
+
+        //저장
+        setMember(context, findMember);
+    }
+
+    public static void setMemo(Context context, String memID, MemoBean memoBean) {
+        //TODO 구현
+    }
+
+    //TODO 메모삭제
+    public static void delMemo(Context context, String memID, MemoBean memoBean) {
+
+    }
+
+    //getMemoList, findMemo TODO
+
+    //메모리스트 취득
+    public static List<MemoBean> getMemoList (Context context, String memID) {
+        MemberBean memberBean = getFindMember(context, memID);
+        if(memberBean == null) return null;
+
+        if(memberBean.memoList == null) {
+            return  new ArrayList<>();
+        } else {
+            return memberBean.memoList;
+        }
+    }
+
+    //멤버리스트 가져오기
     public static List<MemberBean> getMemberList (Context context) {
         String listStr = getSP(context).getString("memberList", null);
         if (listStr == null) {
@@ -49,14 +120,16 @@ public class FileDB {
         return memberList;
     }
 
-    public static MemberBean getFindMember (Context context, String memId) {
+
+
+    public static MemberBean getFindMember (Context context, String memID) {
         //로그인 하나하나 다 해보신다 함........ 으악!
         // 1. 멤버 리스트를 가져온다.
         List<MemberBean> memberList = getMemberList(context);
 
         // 2. for문 돌면서 해당 아이디 찾기
         for (MemberBean bean : memberList) {
-            if (TextUtils.equals(bean.memID, memId)){ //아이디가 같다.
+            if (TextUtils.equals(bean.memID, memID)){ //아이디가 같다.
                 // 3. 찾았을 경우 해당 MemberBean을 리턴
                 return bean;
             }

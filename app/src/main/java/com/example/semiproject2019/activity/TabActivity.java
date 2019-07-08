@@ -7,12 +7,15 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.semiproject2019.bean.MemberBean;
+import com.example.semiproject2019.bean.MemoBean;
 import com.example.semiproject2019.fragment.CameraFragment;
 import com.example.semiproject2019.R;
 import com.example.semiproject2019.fragment.WriteFragment;
@@ -97,6 +100,11 @@ public class TabActivity extends AppCompatActivity {
         Toast.makeText(this, "memoStr : " + memoStr + ", photoPath : " + photoPath, Toast.LENGTH_LONG).show();
 
         //TODO 파일DB에 저장처리
+        MemoBean memoBean = new MemoBean();
+        //memoBean.memoPath = mMemoPhotoPath;
+
+        
+
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {

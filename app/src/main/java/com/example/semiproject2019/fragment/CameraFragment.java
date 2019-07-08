@@ -14,7 +14,7 @@ import com.example.semiproject2019.R;
 public class CameraFragment extends Fragment {
     //사진 찍기
 
-    CameraFragment(){}
+    public String mPhotoPath = "/sdcard/hello/world.jpg"; //dummy data
 
     @Nullable
     @Override

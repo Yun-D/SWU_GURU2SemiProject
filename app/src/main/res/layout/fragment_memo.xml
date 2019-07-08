@@ -15,10 +15,10 @@
         android:textColor="#ffffff"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:id="@+id/btnAddMeMo_Activity"/>
+        android:id="@+id/btnNewMeMo_Activity"/>
 
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/lstMemo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp">

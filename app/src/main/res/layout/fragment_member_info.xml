@@ -12,40 +12,62 @@
         android:layout_width="250dp"
         android:layout_height="150dp"
         android:layout_marginBottom="30dp"
-        android:src="@drawable/img1" />
+        android:src="@drawable/userimg" />
 
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <TableRow>
-            <TextView android:text="ID : "
+
+            <TextView
+                android:text="ID : "
                 android:textSize="25dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/memberInfo_userID"
-                android:textSize="25dp"
-                android:text="test1" />
+                android:text="test1"
+                android:textSize="25dp" />
         </TableRow>
 
         <TableRow>
-            <TextView android:text="이름 : "
+
+            <TextView
+                android:text="이름 : "
                 android:textSize="25dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/memberInfo_userName"
-                android:textSize="25dp"
-                android:text="test2" />
+                android:text="test2"
+                android:textSize="25dp" />
         </TableRow>
 
         <TableRow>
-            <TextView android:text="비밀번호 :  "
+
+            <TextView
+                android:text="비밀번호 :  "
                 android:textSize="25dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/memberInfo_userPWD"
+                android:text="test3"
+                android:textSize="25dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="날짜 :  "
                 android:textSize="25dp"
-                android:text="test3" />
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/memberInfo_date"
+                android:text="test4"
+                android:textSize="25dp" />
         </TableRow>
     </TableLayout>
 

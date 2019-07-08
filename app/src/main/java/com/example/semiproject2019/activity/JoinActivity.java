@@ -1,9 +1,5 @@
 package com.example.semiproject2019.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.FileProvider;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -17,19 +13,19 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.FileProvider;
 
 import com.example.semiproject2019.R;
 import com.example.semiproject2019.bean.MemberBean;
-import com.example.semiproject2019.database.Database;
 import com.example.semiproject2019.db.FileDB;
-import com.example.semiproject2019.model.MemberModel;
 
 import java.io.File;
 import java.text.SimpleDateFormat;

@@ -13,9 +13,7 @@ import android.widget.Toast;
 
 import com.example.semiproject2019.R;
 import com.example.semiproject2019.bean.MemberBean;
-import com.example.semiproject2019.database.Database;
 import com.example.semiproject2019.db.FileDB;
-import com.example.semiproject2019.model.MemberModel;
 
 public class LoginActivity extends AppCompatActivity {
     private final String TAG = this.getClass().getSimpleName(); //클래스명 획득

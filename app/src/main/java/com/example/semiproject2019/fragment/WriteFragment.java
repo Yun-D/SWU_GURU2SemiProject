@@ -13,7 +13,7 @@ import com.example.semiproject2019.R;
 
 public class WriteFragment extends Fragment {
     //메모 쓰기
-    WriteFragment(){}
+    public WriteFragment(){}
 
     @Nullable
     @Override

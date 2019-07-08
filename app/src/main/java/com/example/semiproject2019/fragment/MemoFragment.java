@@ -24,7 +24,7 @@ public class MemoFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_memo, container, false);
 
-        btnAddMeMo_Activity = view.findViewById(R.id.btnAddMeMo_Activity);
+        btnAddMeMo_Activity = view.findViewById(R.id.btnNewMeMo_Activity);
         btnAddMeMo_Activity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

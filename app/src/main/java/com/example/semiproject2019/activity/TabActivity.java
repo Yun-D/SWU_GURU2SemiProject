@@ -6,22 +6,34 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.semiproject2019.bean.MemberBean;
 import com.example.semiproject2019.bean.MemoBean;
+import com.example.semiproject2019.db.FileDB;
 import com.example.semiproject2019.fragment.CameraFragment;
 import com.example.semiproject2019.R;
 import com.example.semiproject2019.fragment.WriteFragment;
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.example.semiproject2019.db.FileDB.addMemo;
+import static com.example.semiproject2019.db.FileDB.getLoginMember;
+
 public class TabActivity extends AppCompatActivity {
+    public static final int SAVE = 1001;
+
+    List<MemoBean> memoBeans = new ArrayList<>();
 
     private TabLayout memoTabLayout;
     private ViewPager memoViewPager;
@@ -101,10 +113,21 @@ public class TabActivity extends AppCompatActivity {
 
         //TODO 파일DB에 저장처리
         MemoBean memoBean = new MemoBean();
+
+        //로그인된 사용자의 아이디 불러오기
+        MemberBean loginMemID = getLoginMember(this);
+
+//        //해당 아이디 찾기
+//        MemberBean findMemberBean = FileDB.getFindMember(this, memID);
         //memoBean.memoPath = mMemoPhotoPath;
 
-        
+        //메모 추가
+        addMemo(this, loginMemID.toString(), memoBean);
 
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivityForResult(intent, SAVE); //저장이 끝나면 onActivityResult 메소드에 save라는 태그가 같이 실려서 옴.
+
+        finish();
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {

@@ -203,7 +203,7 @@ public class JoinActivity extends AppCompatActivity {
 
         bitmap.recycle();
 
-        //사진이 캡쳐되서 들어오면 뒤집어져 있다. 이애를 다시 원상복구 시킨다.
+        //사진이 캡쳐되서 들어오면 뒤집어져 있다. 이 애를 다시 원상복구 시킨다.
         ExifInterface exif = null;
         try {
             exif = new ExifInterface(mPhotoPath);

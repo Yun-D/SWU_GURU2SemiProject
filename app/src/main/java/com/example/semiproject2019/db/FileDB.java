@@ -86,14 +86,38 @@ public class FileDB {
 
     public static void setMemo(Context context, String memID, MemoBean memoBean) {
         //TODO 구현
+        //전체 멤버 리스트를 취득
+        List<MemoBean> memoList = getMemoList(context, memID);
+        if (memoList.size() == 0) return;
+
+        //있을경우 for문
+        for (int i = 0; i < memoList.size(); i++) {
+            MemoBean bean = memoList.get(i);
+//            if (TextUtils.equals(bean.memoID, memoBean.memoID)) {
+//                //같은 멤버 ID를 찾았다.
+//                memoList.set(i, memoBean);
+//                break;
+//            }
+        }
+
+        //새롭게 업데이트된 리스트를 저장한다.
+        String jsonStr = mGson.toJson(memoList);
+
+        //멤버리스트 저장
+        SharedPreferences.Editor editor = getSP(context).edit();
+        editor.putString("memoList", jsonStr);
+        editor.commit();
     }
 
     //TODO 메모삭제
-    public static void delMemo(Context context, String memID, MemoBean memoBean) {
+    public static void delMemo(Context context, String memID, int memoID) {
 
     }
 
-    //getMemoList, findMemo TODO
+    //TODO 메모 찾기
+    public static void findMemo(Context context, String memID, int memoID) {
+
+    }
 
     //메모리스트 취득
     public static List<MemoBean> getMemoList (Context context, String memID) {

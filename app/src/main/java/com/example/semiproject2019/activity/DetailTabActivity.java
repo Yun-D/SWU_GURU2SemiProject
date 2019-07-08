@@ -11,6 +11,8 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.semiproject2019.fragment.MemberInfoFragment;
 import com.example.semiproject2019.fragment.MemoFragment;
 import com.example.semiproject2019.R;
+import com.example.semiproject2019.fragment.ModifyCameraFragment;
+import com.example.semiproject2019.fragment.ModifyWriteFragment;
 import com.google.android.material.tabs.TabLayout;
 
 public class DetailTabActivity extends AppCompatActivity {
@@ -29,7 +31,6 @@ public class DetailTabActivity extends AppCompatActivity {
         //Tab 생성
         detailTabLayout.addTab(detailTabLayout.newTab().setText("글쓰기"));
         detailTabLayout.addTab(detailTabLayout.newTab().setText("사진찍기"));
-        detailTabLayout.addTab(detailTabLayout.newTab().setText("위치정보"));
 
         detailTabLayout.setTabGravity(TabLayout.GRAVITY_FILL); //전체에 다 채우기
 
@@ -68,9 +69,9 @@ public class DetailTabActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new MemoFragment();
+                    return new ModifyWriteFragment();
                 case 1:
-                    return new MemberInfoFragment();
+                    return new ModifyCameraFragment();
             }
             return null;
         }

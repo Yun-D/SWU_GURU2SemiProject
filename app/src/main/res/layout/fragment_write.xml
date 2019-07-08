@@ -12,5 +12,6 @@
         android:layout_height="match_parent"
         android:maxLines="100"
         android:hint="메모를 작성하세요."
-        android:id="@+id/edtWriteMemo"/>
+        android:id="@+id/edtWriteMemo"
+        android:gravity="top"/>
 </LinearLayout>

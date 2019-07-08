@@ -71,7 +71,7 @@ public class CameraFragment extends Fragment {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
             mCaptureUri = Uri.fromFile( getOutPutMediaFile() );
         } else {
-            mCaptureUri = FileProvider.getUriForFile(this.getActivity(), "com.example.semiproject_sample", getOutPutMediaFile());
+            mCaptureUri = FileProvider.getUriForFile(this.getActivity(), "com.example.semiproject2019", getOutPutMediaFile());
         }
 
         i.putExtra(MediaStore.EXTRA_OUTPUT, mCaptureUri);

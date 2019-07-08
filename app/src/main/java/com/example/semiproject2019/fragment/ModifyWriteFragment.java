@@ -11,15 +11,13 @@ import android.view.ViewGroup;
 
 import com.example.semiproject2019.R;
 
-public class ModifyMemoFragment extends Fragment {
-    //위치
-
-    ModifyMemoFragment(){}
+public class ModifyWriteFragment extends Fragment {
+    //메모 수정
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_modify_memo, container, false);
+        View view = inflater.inflate(R.layout.fragment_modify_write, container, false);
 
         return view;
     }

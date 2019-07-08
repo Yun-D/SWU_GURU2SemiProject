@@ -70,9 +70,9 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new MemoFragment();
+                    return new MemoFragment(); //메모 프레그먼트
                 case 1:
-                    return new MemberInfoFragment();
+                    return new MemberInfoFragment(); //회원정보 프레그먼트
             }
             return null;
         }

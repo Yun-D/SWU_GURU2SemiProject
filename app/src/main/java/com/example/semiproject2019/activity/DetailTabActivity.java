@@ -80,4 +80,6 @@ public class DetailTabActivity extends AppCompatActivity {
             return this.tabSize;
         }
     }
+
+    //TODO TabActivity 참고
 }

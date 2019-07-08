@@ -77,7 +77,7 @@ public class FileDB {
         }
         //고유 메모 ID를 생성해준다.
         memoBean.memoID = System.currentTimeMillis();
-        memoList.add(memoBean);
+        memoList.add(0, memoBean);
         findMember.memoList = memoList;
 
         //저장
@@ -100,24 +100,32 @@ public class FileDB {
                 break;
             }
         }
-//        //새롭게 업데이트된 리스트를 저장한다.
-//        String jsonStr = mGson.toJson(memoList);
-//
-//        //멤버리스트 저장
-//        SharedPreferences.Editor editor = getSP(context).edit();
-//        editor.putString("memoList", jsonStr);
-//        editor.commit();
+
     }
 
     //TODO 메모삭제
     public static void delMemo(Context context, String memID, int memoID) {
+        MemberBean memberBean = getFindMember(context, memID); //멤버 찾아
+        List<MemoBean> memoList = getMemoList(context, memID); //메모리스트 불러와
 
+        memberBean.memoList.remove(memoID - 1);
     }
 
     //TODO 메모 찾기
-    public static void findMemo(Context context, String memID, int memoID) {
+    public static MemoBean findMemo(Context context, String memID, int memoID) {
+        List<MemoBean> memoList = getMemoList(context, memID); //메모리스트 불러와
 
+        MemoBean memoBean = null;
+        for (MemoBean bean : memoList) {
+            if (memoBean.memoID == memoID) {  //아이디가 같다
+                memoBean = bean;
+            }
+        }
+        return memoBean;
     }
+
+
+
 
     //메모리스트 취득
     public static List<MemoBean> getMemoList (Context context, String memID) {

@@ -24,7 +24,9 @@ import com.example.semiproject2019.R;
 import com.example.semiproject2019.fragment.WriteFragment;
 import com.google.android.material.tabs.TabLayout;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static com.example.semiproject2019.db.FileDB.addMemo;
@@ -85,11 +87,11 @@ public class TabActivity extends AppCompatActivity {
         public void onClick(View view) {
             //어떤 버튼이 클릭됐는지 구분
             switch (view.getId()) {
-                case R.id.btnCancle:
+                case R.id.btnCancle: //취소버튼
                     finish();
                     break;
 
-                case R.id.btnSave:
+                case R.id.btnSave: //저장버튼
                     saveProc();
                     break;
             }
@@ -113,10 +115,13 @@ public class TabActivity extends AppCompatActivity {
 
         //TODO 파일DB에 저장처리
         MemoBean memoBean = new MemoBean();
+        memoBean.memoPicPath = photoPath; //메모 사진 불러오기
+        memoBean.memo = memoStr;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyy-MM-dd");
+        memoBean.memoDate = sdf.format(new Date());
 
         //로그인된 사용자의 아이디 불러오기
         MemberBean memberBean = FileDB.getLoginMember(this);
-        MemberBean loginMemID = getLoginMember(this);
 
         //사진 찍고 넘어가도록
         if (TextUtils.isEmpty(photoPath)){
@@ -129,8 +134,7 @@ public class TabActivity extends AppCompatActivity {
 
         //메모 추가
         FileDB.addMemo(this, memberBean.memID, memoBean);
-        //Toast.makeText(this, "메모 작성 완료", Toast.LENGTH_SHORT).show();
-
+        Toast.makeText(this, "메모 작성 완료", Toast.LENGTH_SHORT).show();
         finish();
     }
 
@@ -146,9 +150,9 @@ public class TabActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new WriteFragment();
+                    return new WriteFragment(); //메모 작성
                 case 1:
-                    return new CameraFragment();
+                    return new CameraFragment(); //사진찍기
             }
             return null;
         }

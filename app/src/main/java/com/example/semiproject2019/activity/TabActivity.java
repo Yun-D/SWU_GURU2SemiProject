@@ -31,9 +31,9 @@ import static com.example.semiproject2019.db.FileDB.addMemo;
 import static com.example.semiproject2019.db.FileDB.getLoginMember;
 
 public class TabActivity extends AppCompatActivity {
-    public static final int SAVE = 1001;
+   // public static final int SAVE = 1001;
 
-    List<MemoBean> memoBeans = new ArrayList<>();
+    //List<MemoBean> memoBeans = new ArrayList<>();
 
     private TabLayout memoTabLayout;
     private ViewPager memoViewPager;
@@ -115,17 +115,21 @@ public class TabActivity extends AppCompatActivity {
         MemoBean memoBean = new MemoBean();
 
         //로그인된 사용자의 아이디 불러오기
+        MemberBean memberBean = FileDB.getLoginMember(this);
         MemberBean loginMemID = getLoginMember(this);
 
-//        //해당 아이디 찾기
-//        MemberBean findMemberBean = FileDB.getFindMember(this, memID);
-        //memoBean.memoPath = mMemoPhotoPath;
+        //사진 찍고 넘어가도록
+        if (TextUtils.isEmpty(photoPath)){
+            Toast.makeText(this, "사진을 찍어주세요.", Toast.LENGTH_SHORT).show();
+        }
+
+        //메모 입력하도록
+        if (TextUtils.isEmpty(memoStr))
+            Toast.makeText(this, "메모를 입력하세요.", Toast.LENGTH_SHORT).show();
 
         //메모 추가
-        addMemo(this, loginMemID.toString(), memoBean);
-
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivityForResult(intent, SAVE); //저장이 끝나면 onActivityResult 메소드에 save라는 태그가 같이 실려서 옴.
+        FileDB.addMemo(this, memberBean.memID, memoBean);
+        //Toast.makeText(this, "메모 작성 완료", Toast.LENGTH_SHORT).show();
 
         finish();
     }

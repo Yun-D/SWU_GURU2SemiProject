@@ -41,7 +41,7 @@ public class FileDB {
         editor.commit();
     }
 
-    //기존 멤버 교체
+    //기존 멤버 교체. 메모 수정 시 사용
     public static void setMember (Context context, MemberBean memberBean) {
         //전체 멤버 리스트를 취득
         List<MemberBean> memberList = getMemberList(context);
@@ -84,29 +84,29 @@ public class FileDB {
         setMember(context, findMember);
     }
 
+    //메모 수정
     public static void setMemo(Context context, String memID, MemoBean memoBean) {
         //TODO 구현
         //전체 멤버 리스트를 취득
-        List<MemoBean> memoList = getMemoList(context, memID);
-        if (memoList.size() == 0) return;
+        MemberBean memberBean = getFindMember(context, memID);
+        if (memberBean.memoList.size() == 0) return;
 
         //있을경우 for문
-        for (int i = 0; i < memoList.size(); i++) {
-            MemoBean bean = memoList.get(i);
-//            if (TextUtils.equals(bean.memoID, memoBean.memoID)) {
-//                //같은 멤버 ID를 찾았다.
-//                memoList.set(i, memoBean);
-//                break;
-//            }
+        for (int i = 0; i < memberBean.memoList.size(); i++) {
+            MemoBean bean = memberBean.memoList.get(i);
+            if (bean.memo == memoBean.memo) {
+                //같은 멤버 ID를 찾았다.
+                memberBean.memoList.set(i, memoBean);
+                break;
+            }
         }
-
-        //새롭게 업데이트된 리스트를 저장한다.
-        String jsonStr = mGson.toJson(memoList);
-
-        //멤버리스트 저장
-        SharedPreferences.Editor editor = getSP(context).edit();
-        editor.putString("memoList", jsonStr);
-        editor.commit();
+//        //새롭게 업데이트된 리스트를 저장한다.
+//        String jsonStr = mGson.toJson(memoList);
+//
+//        //멤버리스트 저장
+//        SharedPreferences.Editor editor = getSP(context).edit();
+//        editor.putString("memoList", jsonStr);
+//        editor.commit();
     }
 
     //TODO 메모삭제

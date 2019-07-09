@@ -105,11 +105,17 @@ public class FileDB {
 
     //TODO 메모삭제
     public static void delMemo(Context context, String memID, int memoID) {
-        MemberBean memberBean = getFindMember(context, memID); //멤버 찾아
-        List<MemoBean> memoList = getMemoList(context, memID); //메모리스트 불러와
+        MemberBean findMember = getFindMember(context, memID); //멤버 찾아
+        //List<MemoBean> memoList = getMemoList(context, memID); //메모리스트 불러와
+        List<MemoBean> memoList = findMember.memoList; //해당 멤버의 메모리스트를 불러와
 
-        memberBean.memoList.remove(memoID - 1);
-        memberBean.memoList.r
+        findMember.memoList.remove(memoID); //거기서 삭제해
+        memoList.remove(memoID);
+
+        findMember.memoList = memoList; //수정된 메모리스트로 갱신
+        //setMemo(context, memID, memoBean);
+        //adapter.notifyDataSetChanged();
+
     }
 
     //TODO 메모 찾기
@@ -118,7 +124,7 @@ public class FileDB {
 
         MemoBean memoBean = null;
         for (MemoBean bean : memoList) {
-            if (memoBean.memoID == memoID) {  //아이디가 같다
+            if (memoBean.memoID == memoID) {  //아이디가 같다면
                 memoBean = bean;
             }
         }

@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,6 +33,7 @@ public class MemberInfoFragment extends Fragment {
         TextView memberInfo_userName = view.findViewById(R.id.memberInfo_userName);
         TextView memberInfo_userPWD = view.findViewById(R.id.memberInfo_userPWD);
         TextView memberInfo_date = view.findViewById(R.id.memberInfo_date);
+        Button btnLogout = view.findViewById(R.id.btnLogout);
 
         //파일DB에서 가져오기
         MemberBean memberBean = FileDB.getLoginMember(getActivity());
@@ -41,6 +43,13 @@ public class MemberInfoFragment extends Fragment {
         memberInfo_userName.setText(memberBean.memName); //이름
         memberInfo_userPWD.setText(memberBean.memPWD);//비번
         memberInfo_date.setText(memberBean.memRegDate); //날짜
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO 로그아웃
+            }
+        });
 
         return view;
     }

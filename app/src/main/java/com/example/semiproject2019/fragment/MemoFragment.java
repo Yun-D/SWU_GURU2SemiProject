@@ -119,7 +119,7 @@ public class MemoFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     MemberBean memberBean = FileDB.getLoginMember(getActivity()); //fragment에서는 getActivity()로 받아옴...
-                    //FileDB.delMemo(getActivity(), memberBean.memID, memoBean.memoID);
+                    //FileDB.delMemo(getActivity(), memberBean.memID, (int)memoBean.memoID);
                 }
             });
             //수정 버튼 클릭 이벤트

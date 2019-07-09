@@ -113,7 +113,7 @@ public class TabActivity extends AppCompatActivity {
         Log.e("SEMI", "memoStr : " + memoStr + ", photoPath : " + photoPath);
         Toast.makeText(this, "memoStr : " + memoStr + ", photoPath : " + photoPath, Toast.LENGTH_LONG).show();
 
-        //TODO 파일DB에 저장처리
+        //파일DB에 저장처리
         MemoBean memoBean = new MemoBean();
         memoBean.memoPicPath = photoPath; //메모 사진 불러오기
         memoBean.memo = memoStr;

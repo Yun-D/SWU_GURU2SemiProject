@@ -109,6 +109,7 @@ public class FileDB {
         List<MemoBean> memoList = getMemoList(context, memID); //메모리스트 불러와
 
         memberBean.memoList.remove(memoID - 1);
+        memberBean.memoList.r
     }
 
     //TODO 메모 찾기

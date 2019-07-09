@@ -28,13 +28,16 @@ import android.widget.Toast;
 import com.example.semiproject2019.R;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CameraFragment extends Fragment {
     //사진 찍기
 
-    public String mPhotoPath = "/sdcard/hello/world.jpg"; //dummy data
+    public String mPhotoPath = "null"; //dummy data
     private Uri mCaptureUri;
     private ImageView newMemo_ImgView;
     public static final int REQUEST_IMAGE_CAPTURE = 200;
@@ -127,8 +130,40 @@ public class CameraFragment extends Fragment {
         Bitmap rotatedBmp = rotate(resizedBmp, exifDegree);
         newMemo_ImgView.setImageBitmap( rotatedBmp );
 
+        //줄어든 이미지를 다시 저장한다.
+        saveBitmapToFileCache(resizedBmp, mPhotoPath);
+
         //사진이 저장된 경로 보여주기
         Toast.makeText(this.getActivity(), "사진 경로 : " + mPhotoPath, Toast.LENGTH_SHORT).show();
+    }
+
+    private void saveBitmapToFileCache(Bitmap bitmap, String strFilePath) {
+
+        File fileCacheItem = new File(strFilePath);
+        OutputStream out = null;
+
+        try
+        {
+            fileCacheItem.createNewFile();
+            out = new FileOutputStream(fileCacheItem);
+
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            try
+            {
+                out.close();
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
     }
 
     private int exifOrientToDegree(int exifOrientation) {

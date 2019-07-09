@@ -110,8 +110,8 @@ public class TabActivity extends AppCompatActivity {
         String memoStr = edtWriteMemo.getText().toString();
         String photoPath = f1.mPhotoPath;
 
-        Log.e("SEMI", "memoStr : " + memoStr + ", photoPath : " + photoPath);
-        Toast.makeText(this, "memoStr : " + memoStr + ", photoPath : " + photoPath, Toast.LENGTH_LONG).show();
+//        Log.e("SEMI", "memoStr : " + memoStr + ", photoPath : " + photoPath);
+//        Toast.makeText(this, "memoStr : " + memoStr + ", photoPath : " + photoPath, Toast.LENGTH_LONG).show();
 
         //파일DB에 저장처리
         MemoBean memoBean = new MemoBean();
@@ -131,6 +131,9 @@ public class TabActivity extends AppCompatActivity {
         //메모 입력하도록
         if (TextUtils.isEmpty(memoStr))
             Toast.makeText(this, "메모를 입력하세요.", Toast.LENGTH_SHORT).show();
+
+        Log.e("SEMI", "memoStr : " + memoStr + ", photoPath : " + photoPath);
+        Toast.makeText(this, "memoStr : " + memoStr + ", photoPath : " + photoPath, Toast.LENGTH_LONG).show();
 
         //메모 추가
         FileDB.addMemo(this, memberBean.memID, memoBean);

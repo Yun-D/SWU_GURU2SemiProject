@@ -120,6 +120,8 @@ public class MemoFragment extends Fragment {
                 public void onClick(View view) {
                     MemberBean memberBean = FileDB.getLoginMember(getActivity()); //fragment에서는 getActivity()로 받아옴...
                     FileDB.delMemo(getActivity(), memberBean.memID, (int)memoBean.memoID);
+
+                    //db를 삭제하고 db를 다시 읽어주고 -> 어댑터 다시 업뎃시키고
                 }
             });
 

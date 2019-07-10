@@ -85,50 +85,81 @@ public class FileDB {
     }
 
     //메모 수정
-    public static void setMemo(Context context, String memID, MemoBean memoBean) {
+    public static void setMemo(Context context, MemoBean memoBean) {
         //TODO 구현
         //전체 멤버 리스트를 취득
-        MemberBean memberBean = getFindMember(context, memID);
-        if (memberBean.memoList.size() == 0) return;
+        MemberBean memberBean = getLoginMember(context);
+        if (memberBean == null || memberBean.memoList == null) return;
+
+        List<MemoBean> memoList = memberBean.memoList;
 
         //있을경우 for문
-        for (int i = 0; i < memberBean.memoList.size(); i++) {
-            MemoBean bean = memberBean.memoList.get(i);
-            if (bean.memo == memoBean.memo) {
+        for (int i = 0; i < memoList.size(); i++) {
+            MemoBean mBean = memoList.get(i);
+            if (mBean.memoID == memoBean.memoID) {
                 //같은 멤버 ID를 찾았다.
-                memberBean.memoList.set(i, memoBean);
+                memoList.set(i, memoBean); //교체
                 break;
             }
         }
-
+        //업데이트된 메모리스트 저장
+        memberBean.memoList = memoList;
+        setMember(context, memberBean);
     }
 
     //TODO 메모삭제
     public static void delMemo(Context context, String memID, int memoID) {
-        MemberBean findMember = getFindMember(context, memID); //멤버 찾아
-        //List<MemoBean> memoList = getMemoList(context, memID); //메모리스트 불러와
-        List<MemoBean> memoList = findMember.memoList; //해당 멤버의 메모리스트를 불러와
+        MemberBean memberBean = getLoginMember(context);
+        List<MemoBean> memoList = memberBean.memoList;
+        if (memoList == null) return;
 
-        findMember.memoList.remove(memoID); //거기서 삭제해
-        memoList.remove(memoID);
+        for (int i = 0; i < memoList.size(); i++) {
+            MemoBean mBean = memoList.get(i);
+            if(mBean.memoID == memoID) {
+                memoList.remove(i);
+                break;
+            }
+        }
+        //업데이트된 메모리스트 저장
+        memberBean.memoList = memoList;
+        setMember(context, memberBean);
 
-        findMember.memoList = memoList; //수정된 메모리스트로 갱신
-        //setMemo(context, memID, memoBean);
-        //adapter.notifyDataSetChanged();
+//        MemberBean findMember = getFindMember(context, memID); //멤버 찾아
+//        //List<MemoBean> memoList = getMemoList(context, memID); //메모리스트 불러와
+//        List<MemoBean> memoList = findMember.memoList; //해당 멤버의 메모리스트를 불러와
+//
+//        findMember.memoList.remove(memoID); //거기서 삭제해
+//        memoList.remove(memoID);
+//
+//        findMember.memoList = memoList; //수정된 메모리스트로 갱신
+//        //setMemo(context, memID, memoBean);
+//        //adapter.notifyDataSetChanged();
 
     }
 
     //TODO 메모 찾기
-    public static MemoBean findMemo(Context context, String memID, int memoID) {
-        List<MemoBean> memoList = getMemoList(context, memID); //메모리스트 불러와
+    public static MemoBean getMemo(Context context, int memoID) {
+        MemberBean memberBean = getLoginMember(context);
+        List<MemoBean> memoList = memberBean.memoList;
+        if (memoList == null) return null;
 
-        MemoBean memoBean = null;
         for (MemoBean bean : memoList) {
-            if (memoBean.memoID == memoID) {  //아이디가 같다면
-                memoBean = bean;
+            if(bean.memoID == memoID) {
+                //찾았다
+                return bean;
             }
         }
-        return memoBean;
+        return null;
+
+//        List<MemoBean> memoList = getMemoList(context, memID); //메모리스트 불러와
+//
+//        MemoBean memoBean = null;
+//        for (MemoBean bean : memoList) {
+//            if (memoBean.memoID == memoID) {  //아이디가 같다면
+//                memoBean = bean;
+//            }
+//        }
+//        return memoBean;
     }
 
 
@@ -194,6 +225,6 @@ public class FileDB {
 
         if(str == null) return null;
         MemberBean memberBean = mGson.fromJson(str, MemberBean.class);
-        return memberBean;
+        return getFindMember(context, memberBean.memID);
     }
 }
